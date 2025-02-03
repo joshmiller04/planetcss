@@ -16,7 +16,10 @@ title: "Planetary Playing Cards"
 
     {% for item in planets %}
     {% assign data = item | split: "|" %}
-    <p>Planet: {{ data[0] }}, AU: {{ data[1] }}, Color: {{ data[2] }}</p>
-{% endfor %}
-
+    <div class="planet-card">
+        <div class="planet-avatar" style="background: {{ data[2] }};"></div>
+        <h2>{{ data[0] }}</h2>
+        <p>AU Distance: {{ data[1] }}</p>
+    </div>
+    {% endfor %}
 </div>

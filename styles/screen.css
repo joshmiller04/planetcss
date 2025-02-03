@@ -26,13 +26,13 @@ header {
     font-weight: bold;
 }
 
+/* Grid Layout for Cards */
 .card-container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: auto auto;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 20px;
     padding: 20px;
-    max-width: 800px;
+    max-width: 900px;
 }
 
 /* Sun Card */
@@ -40,11 +40,11 @@ header {
     background: var(--card-bg);
     padding: 20px;
     border-radius: 10px;
-    grid-column: span 2;
     text-align: center;
     transition: transform 0.3s ease-in-out;
-    border: 1px solid #555; /* Adds a border to the Sun card */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Adds shadow for depth */
+    border: 1px solid #555; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    grid-column: span 2;
 }
 
 .sun-card:hover {
@@ -66,17 +66,29 @@ header {
     border-radius: 10px;
     text-align: center;
     transition: transform 0.3s ease-in-out;
-    border: 1px solid #555; /* Adds a border to each planet card */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Adds shadow for depth */
+    border: 1px solid #555; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 .planet-card:hover {
     transform: scale(var(--hover-scale));
 }
 
+/* Planet Avatars */
 .planet-avatar {
-    width: var(--planet-size);
-    height: var(--planet-size);
+    width: calc(var(--planet-size) * 1.5);
+    height: calc(var(--planet-size) * 1.5);
     border-radius: 50%;
     margin: auto;
+}
+
+/* Responsive Tweaks */
+@media (max-width: 600px) {
+    .card-container {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+    
+    .sun-card {
+        grid-column: span 1;
+    }
 }
