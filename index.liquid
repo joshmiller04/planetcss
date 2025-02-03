@@ -16,8 +16,7 @@ title: "Planetary Playing Cards"
 
     {% for item in planets %}
     {% assign data = item | split: "|" %}
-    {% render "planet-card.liquid", planet: 
-        { "name": data[0], "au": data[1], "color": data[2] }
-    %}
+    <p>Planet: {{ data[0] }}, AU: {{ data[1] }}, Color: {{ data[2] }}</p>
 {% endfor %}
+
 </div>
