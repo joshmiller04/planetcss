@@ -26,16 +26,14 @@ header {
     font-weight: bold;
 }
 
-/* Grid Layout for Cards */
 .card-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    justify-content: center;
     gap: 20px;
-    padding: 20px;
     max-width: 900px;
 }
 
-/* Sun Card */
 .sun-card {
     background: var(--card-bg);
     padding: 20px;
@@ -59,7 +57,6 @@ header {
     margin: auto;
 }
 
-/* Planet Cards */
 .planet-card {
     background: var(--card-bg);
     padding: 15px;
@@ -74,15 +71,11 @@ header {
     transform: scale(var(--hover-scale));
 }
 
-/* Planet Avatars */
 .planet-avatar {
-    width: calc(var(--planet-size) * 1.5);
-    height: calc(var(--planet-size) * 1.5);
     border-radius: 50%;
     margin: auto;
 }
 
-/* Responsive Tweaks */
 @media (max-width: 600px) {
     .card-container {
         grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
