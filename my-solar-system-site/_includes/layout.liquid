@@ -5,11 +5,11 @@ title: 11ty Boilerplate
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    ...
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
     <link rel="stylesheet" href="/styles/styles.css">
     <script src="https://unpkg.com/scrollreveal"></script>
-    <script src="/js/scrollreveal.js"></script>
-    ...
 </head>
 <body>
   <nav>
@@ -18,6 +18,27 @@ title: 11ty Boilerplate
       <li><a href="/about/" title="About the boilerplate">About</a></li>
     </ul>
   </nav>
-    {{ content }}
+
+  {{ content }}
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      ScrollReveal().reveal('.planet-card', {
+        delay: 200,
+        duration: 1000,
+        distance: '50px',
+        origin: 'bottom',
+        easing: 'ease-in-out'
+      });
+
+      ScrollReveal().reveal('.sun-card', {
+        delay: 100,
+        duration: 1000,
+        distance: '50px',
+        origin: 'top',
+        easing: 'ease-in-out'
+      });
+    });
+  </script>
 </body>
 </html>
