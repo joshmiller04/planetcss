@@ -30,13 +30,13 @@ header {
 
 /* Card Container */
 .card-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid */
-    grid-gap: 20px;
+    display: flex; /* Use flexbox for horizontal layout */
+    justify-content: space-between; /* Distribute the cards evenly */
+    gap: 20px;
     padding: 20px;
-    max-width: var(--max-card-width); /* Max width of the cards container */
-    width: 100%; /* Full width */
-    margin: 0 auto; /* Center the container */
+    max-width: 100%; /* Full width */
+    flex-wrap: nowrap; /* Prevent wrapping, keep all cards in one row */
+    overflow-x: auto; /* Allow horizontal scrolling if the cards overflow */
 }
 
 /* Sun Card */
@@ -44,13 +44,12 @@ header {
     background: var(--card-bg);
     padding: 20px;
     border-radius: 10px;
-    grid-column: span 2;
     text-align: center;
     transition: transform 0.3s ease-in-out;
     border: 1px solid #555; 
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); 
-    max-width: 200px;
-    margin: 0 auto; /* Center the sun card */
+    width: 200px; /* Fixed width for Sun card */
+    margin: 0; /* No margin */
 }
 
 .sun-card:hover {
@@ -74,8 +73,8 @@ header {
     transition: transform 0.3s ease-in-out;
     border: 1px solid #555; 
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); 
-    max-width: 200px;
-    margin: 0 auto; /* Center each planet card */
+    width: 200px; /* Fixed width for Planet cards */
+    margin: 0; /* No margin */
 }
 
 .planet-card:hover {
@@ -84,7 +83,4 @@ header {
 
 .planet-avatar {
     border-radius: 50%;
-    margin: auto;
-    max-width: 80px; /* Limit the size of the planets */
-    max-height: 80px; /* Limit the height of the planets */
-}
+    margin: auto
