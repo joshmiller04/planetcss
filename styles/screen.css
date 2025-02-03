@@ -4,8 +4,8 @@
     --text-color: white;
     --hover-scale: 1.05;
     --sun-size: 120px;
-    --max-card-width: 250px;
-    --planet-size-factor: 25; /* Scaling factor for planet sizes */
+    --max-card-width: 200px; 
+    --planet-size-factor: 25;
 }
 
 body {
@@ -20,6 +20,7 @@ body {
     min-height: 100vh;
     margin: 0;
     padding: 20px;
+    box-sizing: border-box;
 }
 
 header {
@@ -28,18 +29,16 @@ header {
     font-weight: bold;
 }
 
-/* Card Container */
 .card-container {
-    display: flex; /* Use flexbox for horizontal layout */
-    justify-content: space-between; /* Distribute the cards evenly */
+    display: flex; 
+    justify-content: center; 
     gap: 20px;
+    flex-wrap: wrap; 
     padding: 20px;
-    max-width: 100%; /* Full width */
-    flex-wrap: nowrap; /* Prevent wrapping, keep all cards in one row */
-    overflow-x: auto; /* Allow horizontal scrolling if the cards overflow */
+    max-width: 100%; 
+    box-sizing: border-box;
 }
 
-/* Sun Card */
 .sun-card {
     background: var(--card-bg);
     padding: 20px;
@@ -48,8 +47,9 @@ header {
     transition: transform 0.3s ease-in-out;
     border: 1px solid #555; 
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); 
-    width: 200px; /* Fixed width for Sun card */
-    margin: 0; /* No margin */
+    width: 200px; 
+    margin: 10px; 
+    box-sizing: border-box;
 }
 
 .sun-card:hover {
@@ -64,7 +64,6 @@ header {
     margin: auto;
 }
 
-/* Planet Cards */
 .planet-card {
     background: var(--card-bg);
     padding: 15px;
@@ -73,8 +72,9 @@ header {
     transition: transform 0.3s ease-in-out;
     border: 1px solid #555; 
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); 
-    width: 200px; /* Fixed width for Planet cards */
-    margin: 0; /* No margin */
+    width: 200px; 
+    margin: 10px; 
+    box-sizing: border-box;
 }
 
 .planet-card:hover {
@@ -83,4 +83,36 @@ header {
 
 .planet-avatar {
     border-radius: 50%;
-    margin: auto
+    margin: auto;
+    max-width: 80px; 
+    max-height: 80px; 
+}
+
+@media (max-width: 1200px) {
+    .card-container {
+        flex-direction: row; 
+    }
+
+    .planet-card {
+        width: 180px; 
+    }
+
+    .sun-card {
+        width: 180px; 
+    }
+}
+
+@media (max-width: 768px) {
+    .card-container {
+        flex-direction: column; /
+        align-items: center;
+    }
+
+    .planet-card {
+        width: 100%; 
+    }
+
+    .sun-card {
+        width: 100%; 
+    }
+}
