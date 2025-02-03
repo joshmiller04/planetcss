@@ -43,6 +43,8 @@ header {
     grid-column: span 2;
     text-align: center;
     transition: transform 0.3s ease-in-out;
+    border: 1px solid #555; /* Adds a border to the Sun card */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Adds shadow for depth */
 }
 
 .sun-card:hover {
@@ -64,6 +66,8 @@ header {
     border-radius: 10px;
     text-align: center;
     transition: transform 0.3s ease-in-out;
+    border: 1px solid #555; /* Adds a border to each planet card */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Adds shadow for depth */
 }
 
 .planet-card:hover {
