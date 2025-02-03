@@ -12,12 +12,12 @@ title: "Planetary Playing Cards"
     </div>
 
     <!-- Planet Cards -->
-    {% assign planets = "Mercury|0.39|gray|0.38,Venus|0.72|goldenrod|0.95,Earth|1.00|dodgerblue|1.00,Mars|1.52|red|0.53,Jupiter|5.20|orange|11.21,Saturn|9.58|gold|9.45,Uranus|19.18|lightblue|4.01,Neptune|30.07|blue|3.88" | split: "," %}
+    {% assign planets = "Mercury|0.39|gray,Venus|0.72|goldenrod,Earth|1.00|dodgerblue,Mars|1.52|red,Jupiter|5.20|orange,Saturn|9.58|gold,Uranus|19.18|lightblue,Neptune|30.07|blue" | split: "," %}
 
     {% for item in planets %}
     {% assign data = item | split: "|" %}
     <div class="planet-card">
-        <div class="planet-avatar" style="background: {{ data[2] }}; width: {{ data[3] | times: 50 }}px; height: {{ data[3] | times: 50 }}px;"></div>
+        <div class="planet-avatar" style="background: {{ data[2] }}; width: {{ data[1] | times: 15 }}px; height: {{ data[1] | times: 15 }}px;"></div>
         <h2>{{ data[0] }}</h2>
         <p>AU Distance: {{ data[1] }}</p>
     </div>
