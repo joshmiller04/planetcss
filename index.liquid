@@ -1,7 +1,23 @@
 ---
 layout: layout.liquid
-title: 11ty Boilerplate
+title: "Planetary Playing Cards"
 ---
 
-<h1>Yet Another 11ty <strong>Boilerplate</strong></h1>
-<img alt="pine" src="/images/pine.png" width="50" />
+<div class="card-container">
+    <!-- Sun Card -->
+    <div class="sun-card">
+        <div class="sun-avatar"></div>
+        <h2>Sun</h2>
+        <p>Type G2V</p>
+    </div>
+
+    <!-- Planet Cards -->
+    {% assign planets = "Mercury|0.39|gray,Venus|0.72|goldenrod,Earth|1.00|dodgerblue,Mars|1.52|red,Jupiter|5.20|orange,Saturn|9.58|gold,Uranus|19.18|lightblue,Neptune|30.07|blue" | split: "," %}
+
+    {% for item in planets %}
+        {% assign data = item | split: "|" %}
+        {% include "planet-card.liquid" planet: 
+            { "name": data[0], "au": data[1], "color": data[2] }
+        %}
+    {% endfor %}
+</div>

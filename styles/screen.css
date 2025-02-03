@@ -1,50 +1,78 @@
+:root {
+    --bg-color: #222;
+    --card-bg: #444;
+    --text-color: white;
+    --hover-scale: 1.05;
+    --planet-size: 50px;
+    --sun-size: 120px;
+}
+
 body {
-    font-family: Helvetica, sans-serif;
-    color: #EAE8FF;
-    background: #2D3142;
-    padding: 0 40px;
+    background: var(--bg-color);
+    color: var(--text-color);
+    font-family: Arial, sans-serif;
     text-align: center;
-}
-
-nav {
-    margin: 40px auto 0 auto;
-    width: 250px;
-    border-radius: 50px;
-    background: #212431;
-}
-
-nav ul {
     display: flex;
-    justify-content: space-evenly;
-    margin: 0;
-    padding: 0;
-}
-
-nav ul li {
-    list-style-type: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
     margin: 0;
 }
 
-nav ul li a {
-    display: inline-block;
+header {
+    margin: 20px 0;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto auto;
+    gap: 20px;
     padding: 20px;
-    color: #EAE8FF;
-    text-decoration: none;
-    font-size: 1.2em;
+    max-width: 800px;
 }
 
-h1 {
-    font-size: 8em;
-    letter-spacing: -2px;
+/* Sun Card */
+.sun-card {
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 10px;
+    grid-column: span 2;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
 }
 
-h1 strong {
-    background: rgb(34,193,195);
-    background: linear-gradient(45deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+.sun-card:hover {
+    transform: scale(var(--hover-scale));
 }
 
-img.about {
-    opacity: 0.5;
+.sun-avatar {
+    width: var(--sun-size);
+    height: var(--sun-size);
+    background: yellow;
+    border-radius: 50%;
+    margin: auto;
+}
+
+/* Planet Cards */
+.planet-card {
+    background: var(--card-bg);
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.planet-card:hover {
+    transform: scale(var(--hover-scale));
+}
+
+.planet-avatar {
+    width: var(--planet-size);
+    height: var(--planet-size);
+    border-radius: 50%;
+    margin: auto;
 }
