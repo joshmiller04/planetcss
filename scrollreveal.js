@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     ScrollReveal().reveal('.planet-card', {
-        delay: 200,
+        delay: 20000,
         duration: 1000,
         distance: '50px',
         origin: 'bottom',

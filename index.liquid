@@ -15,9 +15,9 @@ title: "Planetary Playing Cards"
     {% assign planets = "Mercury|0.39|gray,Venus|0.72|goldenrod,Earth|1.00|dodgerblue,Mars|1.52|red,Jupiter|5.20|orange,Saturn|9.58|gold,Uranus|19.18|lightblue,Neptune|30.07|blue" | split: "," %}
 
     {% for item in planets %}
-        {% assign data = item | split: "|" %}
-        {% include "planet-card.liquid" planet: 
-            { "name": data[0], "au": data[1], "color": data[2] }
-        %}
-    {% endfor %}
+    {% assign data = item | split: "|" %}
+    {% render "planet-card.liquid", planet: 
+        { "name": data[0], "au": data[1], "color": data[2] }
+    %}
+{% endfor %}
 </div>
