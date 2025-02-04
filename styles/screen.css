@@ -30,11 +30,17 @@ header {
 }
 
 .card-container {
-    display: flex;  /* Ensures planets are laid out in a row */
-    justify-content: center; /* Centers them horizontally */
-    gap: 20px; /* Adds spacing between them */
-    flex-wrap: wrap; /* Prevents overflow */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); 
+    gap: 17px 25px; 
+    justify-items: center; 
+    align-items: center; 
+    max-width: 1200px; 
+    padding: 20px;
 }
+
+
+
 
 .sun-card {
     background: var(--card-bg);
