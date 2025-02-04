@@ -24,7 +24,7 @@ body {
 }
 
 header {
-    margin: 20px 0;
+    margin: 15px 0;
     font-size: 24px;
     font-weight: bold;
 }
@@ -32,13 +32,14 @@ header {
 .card-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); 
-    gap: 20px 40px; 
+    gap: 20px 30px; 
     justify-items: center; 
-    align-items: center; 
-    max-width: 1200px; 
-    margin: 40px auto; 
+    align-items: start;
+    max-width: 1200px;
+    margin: 40px auto;
     padding: 20px;
 }
+
 
 .sun-card {
     background: var(--card-bg);
@@ -49,23 +50,22 @@ header {
     border: 1px solid #555;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     width: 200px; 
-    height: 350px; 
+    height: 420px; 
     display: flex;
     flex-direction: column;
-    justify-content: space-between; 
+    justify-content: center;
+    align-items: center;
     box-sizing: border-box;
+    grid-row: span 2; 
 }
 
-.sun-card:hover {
-    transform: scale(var(--hover-scale));
-}
-
+/* Sun figure (circle) */
 .sun-avatar {
     width: var(--sun-size);
     height: var(--sun-size);
     background: yellow;
     border-radius: 50%;
-    margin: auto;
+    margin: 20px auto;
 }
 
 .planet-card {
@@ -76,13 +76,15 @@ header {
     transition: transform 0.3s ease-in-out;
     border: 1px solid #555;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-    width: 200px; 
-    height: 300px; 
+    width: 200px;
+    height: 200px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; 
+    justify-content: center;
+    align-items: center;
     box-sizing: border-box;
 }
+
 
 .planet-card:hover {
     transform: scale(var(--hover-scale));
@@ -95,14 +97,14 @@ header {
     max-height: 80px;
 }
 
-.planet-card:nth-child(2) .planet-avatar { width: 15px; height: 15px; } /* Mercury */
-.planet-card:nth-child(3) .planet-avatar { width: 50px; height: 30px; } /* Venus */
-.planet-card:nth-child(4) .planet-avatar { width: 35px; height: 35px; } /* Earth */
-.planet-card:nth-child(5) .planet-avatar { width: 25px; height: 25px; } /* Mars */
-.planet-card:nth-child(6) .planet-avatar { width: 60px; height: 60px; } /* Jupiter */
-.planet-card:nth-child(7) .planet-avatar { width: 50px; height: 50px; } /* Saturn */
-.planet-card:nth-child(8) .planet-avatar { width: 45px; height: 45px; } /* Uranus */
-.planet-card:nth-child(9) .planet-avatar { width: 40px; height: 40px; } /* Neptune */
+.planet-card:nth-child(2) .planet-avatar { width: 25px; height: 25px; } /* Mercury */
+.planet-card:nth-child(3) .planet-avatar { width: 40px; height: 40px; } /* Venus */
+.planet-card:nth-child(4) .planet-avatar { width: 45px; height: 45px; } /* Earth */
+.planet-card:nth-child(5) .planet-avatar { width: 35px; height: 35px; } /* Mars */
+.planet-card:nth-child(6) .planet-avatar { width: 70px; height: 70px; } /* Jupiter */
+.planet-card:nth-child(7) .planet-avatar { width: 60px; height: 60px; } /* Saturn */
+.planet-card:nth-child(8) .planet-avatar { width: 55px; height: 55px; } /* Uranus */
+.planet-card:nth-child(9) .planet-avatar { width: 50px; height: 50px; } /* Neptune */
 
 @media (max-width: 1200px) {
     .card-container {
