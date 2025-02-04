@@ -30,13 +30,10 @@ header {
 }
 
 .card-container {
-    display: flex; 
-    justify-content: center; 
-    gap: 20px;
-    flex-wrap: wrap; 
-    padding: 20px;
-    max-width: 100%; 
-    box-sizing: border-box;
+    display: flex;  /* Ensures planets are laid out in a row */
+    justify-content: center; /* Centers them horizontally */
+    gap: 20px; /* Adds spacing between them */
+    flex-wrap: wrap; /* Prevents overflow */
 }
 
 .sun-card {
@@ -87,6 +84,15 @@ header {
     max-width: 80px; 
     max-height: 80px; 
 }
+
+.planet-card:nth-child(2) .planet-avatar { width: 15px; height: 15px; } /* Mercury */
+.planet-card:nth-child(3) .planet-avatar { width: 50px; height: 30px; } /* Venus */
+.planet-card:nth-child(4) .planet-avatar { width: 35px; height: 35px; } /* Earth */
+.planet-card:nth-child(5) .planet-avatar { width: 25px; height: 25px; } /* Mars */
+.planet-card:nth-child(6) .planet-avatar { width: 60px; height: 60px; } /* Jupiter */
+.planet-card:nth-child(7) .planet-avatar { width: 50px; height: 50px; } /* Saturn */
+.planet-card:nth-child(8) .planet-avatar { width: 45px; height: 45px; } /* Uranus */
+.planet-card:nth-child(9) .planet-avatar { width: 40px; height: 40px; } /* Neptune */
 
 @media (max-width: 1200px) {
     .card-container {
