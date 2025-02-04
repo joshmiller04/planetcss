@@ -32,26 +32,27 @@ header {
 .card-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); 
-    gap: 17px 25px; 
+    gap: 20px 40px; 
     justify-items: center; 
     align-items: center; 
     max-width: 1200px; 
+    margin: 40px auto; 
     padding: 20px;
 }
 
-
-
-
 .sun-card {
     background: var(--card-bg);
-    padding: 20px;
+    padding: 15px;
     border-radius: 10px;
     text-align: center;
     transition: transform 0.3s ease-in-out;
-    border: 1px solid #555; 
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); 
+    border: 1px solid #555;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     width: 200px; 
-    margin: 10px; 
+    height: 350px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
     box-sizing: border-box;
 }
 
@@ -73,10 +74,13 @@ header {
     border-radius: 10px;
     text-align: center;
     transition: transform 0.3s ease-in-out;
-    border: 1px solid #555; 
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); 
+    border: 1px solid #555;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     width: 200px; 
-    margin: 10px; 
+    height: 300px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
     box-sizing: border-box;
 }
 
@@ -87,8 +91,8 @@ header {
 .planet-avatar {
     border-radius: 50%;
     margin: auto;
-    max-width: 80px; 
-    max-height: 80px; 
+    max-width: 80px;
+    max-height: 80px;
 }
 
 .planet-card:nth-child(2) .planet-avatar { width: 15px; height: 15px; } /* Mercury */
@@ -102,29 +106,20 @@ header {
 
 @media (max-width: 1200px) {
     .card-container {
-        flex-direction: row; 
+        grid-template-columns: repeat(2, 1fr); 
     }
 
-    .planet-card {
-        width: 180px; 
-    }
-
-    .sun-card {
+    .sun-card, .planet-card {
         width: 180px; 
     }
 }
 
 @media (max-width: 768px) {
     .card-container {
-        flex-direction: column; /
-        align-items: center;
+        grid-template-columns: 1fr; 
     }
 
-    .planet-card {
-        width: 100%; 
-    }
-
-    .sun-card {
+    .sun-card, .planet-card {
         width: 100%; 
     }
 }
