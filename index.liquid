@@ -17,9 +17,32 @@ title: "Planetary Playing Cards"
     {% for item in planets %}
     {% assign data = item | split: "|" %}
     <div class="planet-card">
-        <div class="planet-avatar" style="background: {{ data[2] }}; width: {{ data[1] | times: 25 }}px; height: {{ data[1] | times: 25 }}px;"></div>
+        <div class="planet-avatar" style="background: {{ data[2] }}; width: {{ data[1] | times: 40 }}px; height: {{ data[1] | times: 40 | plus: 10 }}px;"></div>
         <h2>{{ data[0] }}</h2>
         <p>AU Distance: {{ data[1] }}</p>
     </div>
     {% endfor %}
 </div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Sun card animation
+        ScrollReveal().reveal('.sun-card', {
+            delay: 500,
+            duration: 1000,
+            distance: '50px',
+            origin: 'left',
+            easing: 'ease-in-out'
+        });
+
+        // Planet cards animation
+        ScrollReveal().reveal('.planet-card', {
+            delay: 700,
+            duration: 1200,
+            distance: '50px',
+            origin: 'bottom',
+            easing: 'ease-in-out',
+            interval: 400
+        });
+    });
+</script>

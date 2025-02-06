@@ -80,14 +80,12 @@ header {
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
+    cursor: pointer; 
 }
+
 
 .planet-card:hover {
-    transform: scale(var(--hover-scale));
-}
-
-.sun-card:hover {
-    transform: scale(var(--hover-scale));
+    transform: scale(1.0); 
 }
 
 .sun-card, .planet-card {
@@ -100,6 +98,8 @@ header {
     max-width: 80px;
     max-height: 80px;
 }
+
+
 
 .planet-card:nth-child(2) .planet-avatar { width: 25px; height: 25px; } /* Mercury */
 .planet-card:nth-child(3) .planet-avatar { width: 40px; height: 40px; } /* Venus */
