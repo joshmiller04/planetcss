@@ -17,5 +17,29 @@
     <main>
         {{ content }}
     </main>
+    <script src="https://unpkg.com/scrollreveal"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Sun card animation
+        ScrollReveal().reveal('.sun-card', {
+            delay: 500,
+            duration: 1000,
+            distance: '50px',
+            origin: 'left',
+            easing: 'ease-in-out'
+        });
+
+        // Planet cards animation
+        ScrollReveal().reveal('.planet-card', {
+            delay: 700,
+            duration: 1200,
+            distance: '50px',
+            origin: 'bottom',
+            easing: 'ease-in-out',
+            interval: 400
+        });
+    });
+</script>
+
 </body>
 </html>
