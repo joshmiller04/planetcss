@@ -10,11 +10,16 @@ document.addEventListener("DOMContentLoaded", function () {
         delay: 200,
         duration: 1000,
         distance: '50px',
-        origin: 'left',  // Animates from left to right
-        interval: 200  // Ensures smooth staggered reveal
+        origin: 'bottom',
+        interval: 150
     });
 
     ScrollReveal().reveal('.headline');
     ScrollReveal().reveal('.tagline', { delay: 500 });
     ScrollReveal().reveal('.punchline', { delay: 2000 });
+
+    ScrollReveal().reveal('.planet-card, .sun-card', {
+        delay: 1000,
+        interval: 500
+    });
 });
